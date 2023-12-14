@@ -16,7 +16,7 @@ public class RootController {
         model.addAttribute("pageTitle", "Playing Thymeleaf");
         model.addAttribute("scientists", List.of("Albert Einstein",
                 "Niels Bohr",
-                "James Clerk Maxwell))"));
+                "James Clerk Maxwell"));
 
         return "index";
     }
