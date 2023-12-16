@@ -33,3 +33,12 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+sourceSets {
+	getByName("main") {
+		resources {
+			exclude("static/css/application.css")
+		}
+	}
+}
+
