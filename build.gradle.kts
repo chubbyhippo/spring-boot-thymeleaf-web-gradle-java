@@ -1,3 +1,6 @@
+import com.github.gradle.node.npm.task.NpmTask
+import com.github.gradle.node.npm.task.NpxTask
+
 plugins {
     java
     id("org.springframework.boot") version "3.2.0"
@@ -43,3 +46,23 @@ sourceSets {
     }
 }
 
+node {
+    download.set(true)
+    version.set("20.10.0")
+}
+
+tasks.register<NpmTask>("npmCi") {
+    args.set(listOf(
+        "ci",
+    ))
+}
+tasks.register<NpxTask>("buildTailwind") {
+    command.set("tailwindcss")
+    args.set(listOf(
+        "-i",
+        "./src/main/resources/static/css/application.css",
+        "-o",
+        "./build/resources/main/static/css/application.css",
+    ))
+    dependsOn("npmCi")
+}
