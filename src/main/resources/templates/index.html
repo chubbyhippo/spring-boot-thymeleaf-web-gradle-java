@@ -8,9 +8,9 @@
     <link rel="stylesheet" th:href="@{/css/application.css}">
 </head>
 <body>
-<h1 th:text="${pageTitle}">Thymeleaf</h1>
+<h1 th:text="${pageTitle}" class="text-4xl mx-4 mb-4 border-b-4 border-green-700">Thymeleaf</h1>
 <div>
-    <ul>
+    <ul class="list-disc mx-6 text-base">
         <li th:each="scientist : ${scientists}">
             <span th:text="${scientist}"></span>
         </li>
