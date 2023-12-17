@@ -56,6 +56,7 @@ tasks.register<NpmTask>("npmCi") {
         "ci",
     ))
 }
+
 tasks.register<NpxTask>("buildTailwind") {
     command.set("tailwindcss")
     args.set(listOf(
@@ -65,4 +66,8 @@ tasks.register<NpxTask>("buildTailwind") {
         "./build/resources/main/static/css/application.css",
     ))
     dependsOn("npmCi")
+}
+
+tasks.named("compileJava") {
+    dependsOn("buildTailwind")
 }
