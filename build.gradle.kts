@@ -52,22 +52,23 @@ node {
 }
 
 tasks.register<NpmTask>("npmCi") {
-    args.set(listOf(
-        "ci",
-    ))
+    args.set(
+        listOf(
+            "ci",
+        )
+    )
 }
 
 tasks.register<NpxTask>("buildTailwind") {
     command.set("tailwindcss")
-    args.set(listOf(
-        "-i",
-        "./src/main/resources/static/css/application.css",
-        "-o",
-        "./build/resources/main/static/css/application.css",
-    ))
-    dependsOn("npmCi")
+    args.set(
+        listOf(
+            "-i",
+            "./src/main/resources/static/css/application.css",
+            "-o",
+            "./build/resources/main/static/css/application.css",
+        )
+    )
 }
 
-tasks.named("compileJava") {
-    dependsOn("buildTailwind")
-}
+tasks.getByName("compileJava").dependsOn("buildTailwind")
