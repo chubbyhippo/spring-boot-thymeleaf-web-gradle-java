@@ -1,15 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     content: [
         "./src/main/resources/templates/**/*.html"
     ],
     theme: {
         extend: {
-            colors: {
-                'thymeleaf-green': 'darkseagreen'
-            }
+            fontFamily: {
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 }
 
