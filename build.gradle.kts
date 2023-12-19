@@ -1,4 +1,3 @@
-import com.github.gradle.node.npm.task.NpmTask
 import com.github.gradle.node.npm.task.NpxTask
 
 plugins {
