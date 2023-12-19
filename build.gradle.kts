@@ -51,17 +51,11 @@ sourceSets {
 node {
     download.set(true)
     version.set("20.10.0")
-}
-
-tasks.register<NpmTask>("npmCi") {
-    args.set(
-        listOf(
-            "ci",
-        )
-    )
+    npmInstallCommand.set("ci")
 }
 
 tasks.register<NpxTask>("buildTailwind") {
+    dependsOn("npmInstall")
     command.set("tailwindcss")
     args.set(
         listOf(
