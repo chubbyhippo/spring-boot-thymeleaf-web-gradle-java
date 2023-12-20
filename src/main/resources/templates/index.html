@@ -316,6 +316,7 @@
     </div>
 </div>
 <script type="text/javascript" th:src="@{/webjars/alpinejs/dist/cdn.min.js}" defer></script>
+<script type="text/javascript" th:src="@{/js/user-popup-menu.js}"></script>
 <script>
 
     function sidebarMenu() {
@@ -333,20 +334,7 @@
         };
     }
 
-    function userPopupMenu() {
-        return {
-            show: false,
-            toggleVisibility() {
-                this.show = !this.show;
-            },
-            close() {
-                this.show = false;
-            },
-            isVisible() {
-                return this.show === true;
-            }
-        };
-    }
+
 </script>
 </body>
 </html>
