@@ -9,7 +9,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class RootController {
+public class HomeController {
 
     @GetMapping
     String index(Model model) {
