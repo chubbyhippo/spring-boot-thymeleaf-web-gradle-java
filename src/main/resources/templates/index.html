@@ -14,7 +14,7 @@
 </head>
 <body class="h-full">
 <div x-data="sidebarMenu()"
-     @keydown.window.escape="closeSidebar">
+     @keydown.window.escape="closeSidebar()">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true"
          x-show="isVisible()">
@@ -71,7 +71,7 @@
                 <div class="absolute top-0 right-0 -mr-12 pt-2">
                     <button type="button"
                             class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            @click="closeSidebar">
+                            @click="closeSidebar()">
                         <span class="sr-only">Close sidebar</span>
                         <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" aria-hidden="true">
@@ -238,7 +238,7 @@
         <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
             <button type="button"
                     class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
-                    @click.stop="openSidebar">
+                    @click.stop="openSidebar()">
                 <span class="sr-only">Open sidebar</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                      aria-hidden="true">
@@ -254,13 +254,13 @@
                     <!-- Profile dropdown -->
                     <div class="relative ml-3"
                          x-data="userPopupMenu()"
-                         @click.away="close"
-                         @keydown.window.escape="close">
+                         @click.away="close()"
+                         @keydown.window.escape="close()">
                         <div>
                             <button type="button"
                                     class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true"
-                                    @click="toggleVisibility">
+                                    @click="toggleVisibility()">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full"
                                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
