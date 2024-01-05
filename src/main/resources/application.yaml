@@ -6,3 +6,6 @@ spring:
     resources:
       chain:
         cache: false
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
