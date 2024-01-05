@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @WebMvcTest(HomeController.class)
@@ -25,7 +24,8 @@ class HomeControllerTest {
     @DisplayName("Should return index page response")
     void shouldReturnIndexPageResponse() throws Exception {
         mockMvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("index"));
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/users"))
+                .andExpect(view().name("redirect:/users"));
     }
 }
