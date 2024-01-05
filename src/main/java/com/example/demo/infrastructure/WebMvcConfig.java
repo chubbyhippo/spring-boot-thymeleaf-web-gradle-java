@@ -18,8 +18,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Bean
     LocaleChangeInterceptor localeInterceptor() {
-        LocaleChangeInterceptor localeInterceptor = new
-                LocaleChangeInterceptor();
+        var localeInterceptor = new LocaleChangeInterceptor();
         localeInterceptor.setParamName("lang");
         return localeInterceptor;
     }
