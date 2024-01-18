@@ -1,4 +1,4 @@
-CREATE TABLE user
+CREATE TABLE users
 (
     id           UUID PRIMARY KEY NOT NULL,
     first_name   VARCHAR          NOT NULL,
@@ -6,6 +6,5 @@ CREATE TABLE user
     gender       VARCHAR          NOT NULL,
     birthday     DATE             NOT NULL,
     email        VARCHAR          NOT NULL,
-    phone_number VARCHAR          NOT NULL,
-
+    phone_number VARCHAR          NOT NULL
 );
