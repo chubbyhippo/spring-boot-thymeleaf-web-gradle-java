@@ -31,6 +31,7 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
     implementation("org.flywaydb:flyway-core")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.webjars.npm:alpinejs:3.13.3")
