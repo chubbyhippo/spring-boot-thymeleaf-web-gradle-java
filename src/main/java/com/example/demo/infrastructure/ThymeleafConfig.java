@@ -14,7 +14,6 @@ public class ThymeleafConfig {
         resolver.setPrefix("classpath:/templates/svg/");
         resolver.setSuffix(".svg");
         resolver.setTemplateMode(TemplateMode.XML);
-//        resolver.setOrder(0);
 
         return resolver;
     }
