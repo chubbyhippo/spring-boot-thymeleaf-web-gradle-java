@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:latest:///
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: true
+  thymeleaf:
+    cache: false
+    template-resolver-order: 0
+  web:
+    resources:
+      chain:
+        cache: false
+  messages:
+    basename: i18n/messages
