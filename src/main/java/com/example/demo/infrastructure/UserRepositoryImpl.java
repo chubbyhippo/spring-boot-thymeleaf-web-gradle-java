@@ -1,0 +1,16 @@
+package com.example.demo.infrastructure;
+
+import com.example.demo.domain.User;
+import com.example.demo.domain.UserRepository;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class UserRepositoryImpl implements UserRepository {
+
+    private final UserJpaRepository repository;
+
+    @Override
+    public User save(User user) {
+        return repository.save(user);
+    }
+}
