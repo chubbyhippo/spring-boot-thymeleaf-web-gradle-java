@@ -1,15 +1,14 @@
 package com.example.demo.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
+@Builder
 @Entity
 @Getter
 @NoArgsConstructor
@@ -32,4 +31,16 @@ public class User {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
