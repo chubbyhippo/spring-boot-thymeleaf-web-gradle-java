@@ -1,4 +1,4 @@
-package com.example.demo.infrastructure;
+package com.example.demo.infrastructure.repository;
 
 import com.example.demo.domain.model.User;
 import com.example.demo.domain.repository.UserRepository;
