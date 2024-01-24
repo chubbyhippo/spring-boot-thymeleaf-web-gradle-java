@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure;
 
-import com.example.demo.domain.Gender;
-import com.example.demo.domain.User;
+import com.example.demo.domain.model.Gender;
+import com.example.demo.domain.model.User;
 import net.datafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
