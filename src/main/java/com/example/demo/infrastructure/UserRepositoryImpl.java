@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure;
 
 import com.example.demo.domain.model.User;
-import com.example.demo.domain.UserRepository;
+import com.example.demo.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
