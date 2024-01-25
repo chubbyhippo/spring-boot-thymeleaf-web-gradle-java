@@ -13,7 +13,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.testcontainers.context.ImportTestcontainers;
 
 import java.util.Random;
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,7 +38,7 @@ class UserJpaRepositoryTest {
                 .phoneNumber(String.valueOf(faker.phoneNumber()))
                 .build());
 
-        UUID id = savedUser.getId();
+        var id = savedUser.getId();
         assertThat(id).isNotNull();
     }
 }
