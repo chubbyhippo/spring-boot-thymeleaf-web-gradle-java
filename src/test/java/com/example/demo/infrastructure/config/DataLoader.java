@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.infrastructure.config;
 
 import com.example.demo.application.service.UserService;
 import com.example.demo.domain.model.Gender;
