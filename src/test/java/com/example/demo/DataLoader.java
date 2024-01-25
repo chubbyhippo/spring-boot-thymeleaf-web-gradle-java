@@ -9,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 @Configuration
 public class DataLoader implements CommandLineRunner {
@@ -21,15 +23,16 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        var faker = new Faker();
-        User user = User.builder()
-                .firstname(faker.elderScrolls().firstName())
-                .lastname(faker.touhou().characterLastName())
-                .dob(faker.date().birthdayLocalDate())
-                .email(faker.internet().emailAddress())
-                .gender(Gender.UNKNOWN)
-                .phoneNumber(faker.phoneNumber().phoneNumber())
-                .build();
-        userRepository.createUser(user);
+        IntStream.range(0, 1000)
+                .mapToObj(i -> new Faker()).map(faker -> User.builder()
+                        .firstname(faker.elderScrolls().firstName())
+                        .lastname(faker.touhou().characterLastName())
+                        .dob(faker.date().birthdayLocalDate())
+                        .email(faker.internet().emailAddress())
+                        .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                        .phoneNumber(faker.phoneNumber().phoneNumber())
+                        .build())
+                .forEach(userRepository::createUser);
+
     }
 }
