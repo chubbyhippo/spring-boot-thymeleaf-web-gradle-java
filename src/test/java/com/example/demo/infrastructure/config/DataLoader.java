@@ -1,6 +1,5 @@
 package com.example.demo.infrastructure.config;
 
-import com.example.demo.application.service.UserService;
 import com.example.demo.domain.model.Gender;
 import com.example.demo.domain.model.User;
 import com.example.demo.domain.repository.UserRepository;
@@ -8,7 +7,6 @@ import net.datafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
