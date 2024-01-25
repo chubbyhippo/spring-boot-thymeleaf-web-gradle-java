@@ -1,5 +1,6 @@
 package com.example.demo.infrastructure;
 
+import com.example.demo.AbstractTestcontainers;
 import com.example.demo.domain.model.Gender;
 import com.example.demo.domain.model.User;
 import com.example.demo.infrastructure.repository.UserJpaRepository;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.testcontainers.context.ImportTestcontainers;
 
 import java.util.Random;
 import java.util.UUID;
@@ -17,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@ImportTestcontainers(AbstractTestcontainers.class)
 class UserJpaRepositoryTest {
 
     @Autowired
@@ -37,7 +40,6 @@ class UserJpaRepositoryTest {
                 .build());
 
         UUID id = savedUser.getId();
-        System.out.println("Saved UUID :" + id);
         assertThat(id).isNotNull();
     }
 }
