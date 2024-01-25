@@ -23,6 +23,7 @@ public class User {
     @Column(name = "last_name")
     private String lastname;
     @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     @Column(name = "date_of_birth")
     private LocalDate dob;
