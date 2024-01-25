@@ -11,13 +11,6 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 @ImportTestcontainers(AbstractTestcontainers.class)
 public class TestDemoApplication {
-
-//    @Bean
-//    @ServiceConnection
-//    PostgreSQLContainer<?> postgresContainer() {
-//        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
-//    }
-
     public static void main(String[] args) {
         SpringApplication.from(DemoApplication::main)
                 .with(TestDemoApplication.class)
