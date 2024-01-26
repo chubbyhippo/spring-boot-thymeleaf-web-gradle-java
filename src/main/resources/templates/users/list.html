@@ -33,10 +33,10 @@
                             <tbody>
                             <!-- tag::tr-body[] -->
                             <tr class="bg-white" th:each="user : ${users}">
-                                <td th:replace="~{fragments/table :: data(contents=${user.userName.fullName},primary=true)}"></td> <!--.-->
+                                <td th:replace="~{fragments/table :: data(contents=${user.name},primary=true)}"></td> <!--.-->
                                 <td th:replace="~{fragments/table :: data(contents=${user.gender},hideOnMobile=true)}"></td>
                                 <td th:replace="~{fragments/table :: data(contents=${user.birthday},hideOnMobile=true)}"></td>
-                                <td th:replace="~{fragments/table :: data(contents=${user.email.asString()},hideOnMobile=true)}"></td>
+                                <td th:replace="~{fragments/table :: data(contents=${user.email},hideOnMobile=true)}"></td>
                                 <td th:replace="~{fragments/table :: dataWithLink(#{edit}, '#')}"></td> <!--.-->
                             </tr>
                             <!-- end::tr-body[] -->
