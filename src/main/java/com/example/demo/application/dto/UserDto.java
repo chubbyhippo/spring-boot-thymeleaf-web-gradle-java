@@ -10,6 +10,7 @@ public record UserDto(
         String name,
         Gender gender,
         LocalDate birthday,
-        String phoneNumber
+        String phoneNumber,
+        String email
 ) {
 }
