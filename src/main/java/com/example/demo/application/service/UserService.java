@@ -20,6 +20,7 @@ public class UserService {
                         .gender(user.getGender())
                         .birthday(user.getDob())
                         .phoneNumber(user.getPhoneNumber())
+                        .email(user.getEmail())
                         .build());
     }
 
