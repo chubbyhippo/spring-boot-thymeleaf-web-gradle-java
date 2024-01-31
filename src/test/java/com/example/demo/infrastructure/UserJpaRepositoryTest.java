@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.testcontainers.context.ImportTestcontainers;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,7 +30,7 @@ class UserJpaRepositoryTest {
     void shouldSaveUser() {
         var faker = new Faker();
         var genders = Gender.values();
-        var randomGender = genders[new Random().nextInt(genders.length)];
+        var randomGender = genders[ThreadLocalRandom.current().nextInt(genders.length)];
         var savedUser = repository.save(User.builder()
                 .firstname(faker.elderScrolls().firstName())
                 .lastname(faker.elderScrolls().lastName())
