@@ -24,18 +24,21 @@ repositories {
     mavenCentral()
 }
 
+val datafakerVersion = "2.1.0"
+val alpinejsVersion = "3.13.3"
+
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-    implementation("net.datafaker:datafaker:2.1.0")
+    implementation("net.datafaker:datafaker:$datafakerVersion")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
     implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.webjars.npm:alpinejs:3.13.3")
+    implementation("org.webjars.npm:alpinejs:$alpinejsVersion")
     implementation("org.webjars:webjars-locator-core")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
