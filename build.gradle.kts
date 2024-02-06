@@ -62,7 +62,7 @@ sourceSets {
 
 node {
     download.set(true)
-    version.set("20.10.0")
+    version.set("20.11.0")
     npmInstallCommand.set("ci")
 }
 
