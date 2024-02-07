@@ -30,7 +30,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
         log.info("JDBC URL : {}" , jdbcUrl);
-        IntStream.range(0, 1000)
+        IntStream.range(0, 100)
                 .mapToObj(i -> new Faker()).map(faker -> User.builder()
                         .firstname(faker.elderScrolls().firstName())
                         .lastname(faker.touhou().characterLastName())
