@@ -6,7 +6,7 @@ import lombok.Builder;
 import java.time.LocalDate;
 
 @Builder
-public record UserDto(
+public record ResponseUserDto(
         String name,
         Gender gender,
         LocalDate birthday,
