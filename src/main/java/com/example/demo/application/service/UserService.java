@@ -1,6 +1,6 @@
 package com.example.demo.application.service;
 
-import com.example.demo.application.dto.UserDto;
+import com.example.demo.application.dto.ResponseUserDto;
 import com.example.demo.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -13,9 +13,9 @@ public class UserService {
 
     private final UserRepository repository;
 
-    public Page<UserDto> getUsers(Pageable pageable) {
+    public Page<ResponseUserDto> getUsers(Pageable pageable) {
         return repository.getUsers(pageable)
-                .map(user -> UserDto.builder()
+                .map(user -> ResponseUserDto.builder()
                         .name(user.getFirstname() + " " + user.getLastname())
                         .gender(user.getGender())
                         .birthday(user.getDob())
