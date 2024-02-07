@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @GetMapping("/create")
-    public String createUserForm(Model model) { //<.>
+    public String createUserForm(Model model) {
         model.addAttribute("user", CreateUserDto.builder().build());
         model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER, Gender.UNKNOWN));
         return "users/edit";
