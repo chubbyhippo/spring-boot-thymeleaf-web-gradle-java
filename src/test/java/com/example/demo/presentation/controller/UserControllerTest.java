@@ -2,15 +2,18 @@ package com.example.demo.presentation.controller;
 
 import com.example.demo.application.service.UserService;
 import com.example.demo.infrastructure.config.ThymeleafConfig;
+import com.example.demo.shared.TestUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -28,6 +31,8 @@ class UserControllerTest {
     @Test
     @DisplayName("should return user list page")
     void shouldReturnUserListPage() throws Exception {
+        when(userService.getUsers(any(Pageable.class)))
+                .thenReturn(TestUtil.createPageOfResponseDtos());
 
         mockMvc.perform(get("/users"))
                 .andExpect(status().isOk())
