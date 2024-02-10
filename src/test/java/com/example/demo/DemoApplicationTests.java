@@ -8,7 +8,6 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
 @SpringBootTest
 class DemoApplicationTests {
 
-
 	@Test
 	void shouldRunMainWithoutException() {
 		final var RANDOM_PORT_NUMBER = "--server.port=0";
