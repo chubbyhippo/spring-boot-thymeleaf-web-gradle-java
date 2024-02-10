@@ -22,6 +22,7 @@ public class TestUtil {
                 .firstname(faker.elderScrolls().firstName())
                 .lastname(faker.elderScrolls().lastName())
                 .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .dob(faker.date().birthdayLocalDate(18, 98))
                 .email(faker.internet().emailAddress())
                 .phoneNumber(String.valueOf(faker.phoneNumber()))
                 .build();
