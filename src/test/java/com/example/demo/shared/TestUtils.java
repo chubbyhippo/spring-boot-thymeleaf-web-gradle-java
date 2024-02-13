@@ -12,7 +12,7 @@ import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
-public class TestUtil {
+public class TestUtils {
 
     private static final Faker faker = new Faker();
 
