@@ -1,6 +1,6 @@
 package com.example.demo.application.mapper;
 
-import com.example.demo.shared.TestUtil;
+import com.example.demo.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +18,7 @@ class UserMapperTest {
     @Test
     @DisplayName("should return response user dto")
     void shouldReturnResponseUserDto() {
-        var user = TestUtil.createUser();
+        var user = TestUtils.createUser();
 
         var responseUserDto = userMapper.toResponseUserDto(user);
         assertEquals(user.getFirstname() + " " + user.getLastname(), responseUserDto.name());
