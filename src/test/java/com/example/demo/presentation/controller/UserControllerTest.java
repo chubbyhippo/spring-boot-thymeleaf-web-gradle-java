@@ -2,7 +2,7 @@ package com.example.demo.presentation.controller;
 
 import com.example.demo.application.service.UserService;
 import com.example.demo.infrastructure.config.ThymeleafConfig;
-import com.example.demo.shared.TestUtil;
+import com.example.demo.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +32,22 @@ class UserControllerTest {
     @DisplayName("should return user list page")
     void shouldReturnUserListPage() throws Exception {
         when(userService.getUsers(any(Pageable.class)))
-                .thenReturn(TestUtil.createPageOfResponseDtos());
+                .thenReturn(TestUtils.createPageOfResponseDtos());
 
         mockMvc.perform(get("/users"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("users/list"));
+    }
+
+    @Test
+    @DisplayName("should return user edit page")
+    void shouldReturnUserEditPage() throws Exception {
+
+        when(userService.getUsers(any(Pageable.class)))
+                .thenReturn(TestUtils.createPageOfResponseDtos());
+
+        mockMvc.perform(get("/users/create"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("users/edit"));
     }
 }
