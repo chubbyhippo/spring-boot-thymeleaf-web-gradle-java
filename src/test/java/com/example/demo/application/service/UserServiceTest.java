@@ -22,8 +22,11 @@ import static org.mockito.Mockito.when;
 class UserServiceTest {
     @Mock
     private UserRepository userRepository;
+
+    @SuppressWarnings("unused")
     @Spy
     private UserMapper userMapper;
+
     @InjectMocks
     private UserService userService;
 
