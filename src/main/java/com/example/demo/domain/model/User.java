@@ -12,7 +12,6 @@ import java.util.UUID;
 @Entity
 @Getter
 @NoArgsConstructor
-@Setter
 @Table(name = "thymeleaf_user")
 public class User {
     @Id
