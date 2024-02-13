@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure.config;
 
 import com.example.demo.domain.repository.UserRepository;
-import com.example.demo.shared.TestUtil;
+import com.example.demo.shared.TestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,7 +28,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) {
         log.info("JDBC URL : {}", jdbcUrl);
         IntStream.range(0, 100)
-                .mapToObj(i -> TestUtil.createUser())
+                .mapToObj(i -> TestUtils.createUser())
                 .forEach(userRepository::createUser);
 
     }
