@@ -1,7 +1,6 @@
-package com.example.demo.infrastructure.config;
+package com.example.demo.shared;
 
 import com.example.demo.domain.repository.UserRepository;
-import com.example.demo.shared.TestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
