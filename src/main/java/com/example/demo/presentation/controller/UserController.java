@@ -8,7 +8,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SortDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -34,5 +38,21 @@ public class UserController {
         model.addAttribute("user", CreateUserDto.builder().build());
         model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER, Gender.UNKNOWN));
         return "users/edit";
+    }
+
+    @PostMapping("/create")
+    public String doCreateUser(@Validated @ModelAttribute("user") CreateUserDto createUserDto,
+                               BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("genders", List.of(Gender.MALE,
+                    Gender.FEMALE,
+                    Gender.OTHER,
+                    Gender.UNKNOWN));
+            return "users/edit";
+        }
+
+        service.createUser(createUserDto);
+
+        return "redirect:/users";
     }
 }
