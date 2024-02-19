@@ -1,7 +1,6 @@
 package com.example.demo.application.mapper;
 
 import com.example.demo.shared.TestUtils;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,7 +8,6 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class UserMapperTest {
@@ -23,11 +21,12 @@ class UserMapperTest {
         var user = TestUtils.createUser();
 
         var responseUserDto = userMapper.toResponseUserDto(user);
-        assertEquals(user.getFirstname() + " " + user.getLastname(), responseUserDto.name());
-        assertEquals(user.getGender(), responseUserDto.gender());
-        assertEquals(user.getDob(), responseUserDto.birthday());
-        assertEquals(user.getPhoneNumber(), responseUserDto.phoneNumber());
-        assertEquals(user.getEmail(), responseUserDto.email());
+        assertThat(responseUserDto.name()).isEqualTo(user.getFirstname() + " " + user.getLastname());
+        assertThat(responseUserDto.gender()).isEqualTo(user.getGender());
+        assertThat(responseUserDto.birthday()).isEqualTo(user.getDob());
+        assertThat(responseUserDto.phoneNumber()).isEqualTo(user.getPhoneNumber());
+        assertThat(responseUserDto.email()).isEqualTo(user.getEmail());
+
     }
 
     @Test
