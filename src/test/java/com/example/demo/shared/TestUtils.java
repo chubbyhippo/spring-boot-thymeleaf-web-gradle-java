@@ -25,7 +25,7 @@ public class TestUtils {
                 .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
                 .dob(faker.date().birthdayLocalDate(18, 98))
                 .email(faker.internet().emailAddress())
-                .phoneNumber(String.valueOf(faker.phoneNumber()))
+                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
                 .build();
 
     }
@@ -37,7 +37,7 @@ public class TestUtils {
                 .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
                 .birthday(faker.date().birthdayLocalDate(18, 98))
                 .email(faker.internet().emailAddress())
-                .phoneNumber(String.valueOf(faker.phoneNumber()))
+                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
                 .build();
 
     }
