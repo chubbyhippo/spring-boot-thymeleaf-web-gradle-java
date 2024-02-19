@@ -65,4 +65,18 @@ class UserControllerTest {
                 .andExpect(redirectedUrl("/users"));
 
     }
+
+    @Test
+    @DisplayName("should return to edit page if invalid")
+    void shouldReturnToEditPageIfInvalid() throws Exception {
+
+        doNothing().when(userService).createUser(any(CreateUserDto.class));
+        var createUserDtoWithAllEmptyFields = CreateUserDto.builder().build();
+
+        mockMvc.perform(post("/users/create")
+                        .flashAttr("user", createUserDtoWithAllEmptyFields)
+                )
+                .andExpect(status().isOk())
+                .andExpect(view().name("users/edit"));
+    }
 }
