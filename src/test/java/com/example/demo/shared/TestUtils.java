@@ -1,5 +1,6 @@
 package com.example.demo.shared;
 
+import com.example.demo.application.dto.CreateUserDto;
 import com.example.demo.application.dto.ResponseUserDto;
 import com.example.demo.application.mapper.UserMapper;
 import com.example.demo.domain.model.Gender;
@@ -23,6 +24,18 @@ public class TestUtils {
                 .lastname(faker.elderScrolls().lastName())
                 .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
                 .dob(faker.date().birthdayLocalDate(18, 98))
+                .email(faker.internet().emailAddress())
+                .phoneNumber(String.valueOf(faker.phoneNumber()))
+                .build();
+
+    }
+
+    public static CreateUserDto createCreateUserDto() {
+        return CreateUserDto.builder()
+                .firstname(faker.elderScrolls().firstName())
+                .lastname(faker.elderScrolls().lastName())
+                .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .birthday(faker.date().birthdayLocalDate(18, 98))
                 .email(faker.internet().emailAddress())
                 .phoneNumber(String.valueOf(faker.phoneNumber()))
                 .build();
