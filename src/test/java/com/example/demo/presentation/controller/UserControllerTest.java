@@ -1,5 +1,6 @@
 package com.example.demo.presentation.controller;
 
+import com.example.demo.application.dto.CreateUserDto;
 import com.example.demo.application.service.UserService;
 import com.example.demo.infrastructure.config.ThymeleafConfig;
 import com.example.demo.shared.TestUtils;
@@ -12,11 +13,10 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = UserController.class)
 @Import(ThymeleafConfig.class)
@@ -49,5 +49,20 @@ class UserControllerTest {
         mockMvc.perform(get("/users/create"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("users/edit"));
+    }
+
+    @Test
+    @DisplayName("should redirect to users if valid")
+    void shouldRedirectToUsersIfValid() throws Exception {
+
+        doNothing().when(userService).createUser(any(CreateUserDto.class));
+        var createUserDto = TestUtils.createCreateUserDto();
+
+        mockMvc.perform(post("/users/create")
+                        .flashAttr("user", createUserDto)
+                )
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/users"));
+
     }
 }
