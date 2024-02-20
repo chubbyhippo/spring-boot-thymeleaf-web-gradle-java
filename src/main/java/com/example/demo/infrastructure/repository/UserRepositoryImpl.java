@@ -23,4 +23,9 @@ public class UserRepositoryImpl implements UserRepository {
         return repository.findAll(pageable);
     }
 
+    @Override
+    public boolean existsByEmail(String email) {
+        return repository.existsByEmail(email);
+    }
+
 }
