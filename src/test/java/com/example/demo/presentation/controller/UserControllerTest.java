@@ -2,6 +2,8 @@ package com.example.demo.presentation.controller;
 
 import com.example.demo.application.dto.CreateUserDto;
 import com.example.demo.application.service.UserService;
+import com.example.demo.application.validation.UniqueEmailValidator;
+import com.example.demo.domain.repository.UserRepository;
 import com.example.demo.infrastructure.config.ThymeleafConfig;
 import com.example.demo.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
@@ -9,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,7 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = UserController.class)
-@Import(ThymeleafConfig.class)
+@Import({ThymeleafConfig.class})
 class UserControllerTest {
 
     @Autowired
@@ -27,6 +30,12 @@ class UserControllerTest {
 
     @MockBean
     private UserService userService;
+    @SpyBean
+    @SuppressWarnings("unused")
+    private UniqueEmailValidator uniqueEmailValidator;
+    @MockBean
+    private UserRepository userRepository;
+
 
     @Test
     @DisplayName("should return user list page")
@@ -55,7 +64,9 @@ class UserControllerTest {
     @DisplayName("should redirect to users if valid")
     void shouldRedirectToUsersIfValid() throws Exception {
 
+
         doNothing().when(userService).createUser(any(CreateUserDto.class));
+        when(userRepository.existsByEmail(any(String.class))).thenReturn(false);
         var createUserDto = TestUtils.createCreateUserDto();
 
         mockMvc.perform(post("/users/create")
@@ -71,6 +82,7 @@ class UserControllerTest {
     void shouldReturnToEditPageIfInvalid() throws Exception {
 
         doNothing().when(userService).createUser(any(CreateUserDto.class));
+        when(userRepository.existsByEmail(any(String.class))).thenReturn(true);
         var createUserDtoWithAllEmptyFields = CreateUserDto.builder().build();
 
         mockMvc.perform(post("/users/create")
