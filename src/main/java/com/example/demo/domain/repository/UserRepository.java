@@ -10,4 +10,6 @@ public interface UserRepository {
 
     Page<User> getUsers(Pageable pageable);
 
+    boolean existsByEmail(String email);
+
 }
