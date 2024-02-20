@@ -1,5 +1,6 @@
 package com.example.demo.application.dto;
 
+import com.example.demo.application.validation.UniqueEmail;
 import com.example.demo.domain.model.Gender;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -18,8 +19,9 @@ public record CreateUserDto(
         String lastname,
         @NotNull
         Gender gender,
-        @NotBlank
         @Email
+        @NotBlank
+        @UniqueEmail
         String email,
         @NotNull
         @DateTimeFormat(pattern = "yyyy-MM-dd")
