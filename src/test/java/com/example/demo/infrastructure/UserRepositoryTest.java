@@ -5,6 +5,7 @@ import com.example.demo.domain.model.User;
 import com.example.demo.infrastructure.repository.UserJpaRepository;
 import com.example.demo.infrastructure.repository.UserRepositoryImpl;
 import com.example.demo.shared.TestUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -49,5 +50,13 @@ class UserRepositoryTest {
         var users = userRepository.getUsers(pageRequest);
 
         assertThat(users.getTotalElements()).isPositive();
+    }
+
+    @Test
+    @DisplayName("should get existing state of email")
+    void shouldGetExistingStateOfEmail() {
+        when(userJpaRepository.existsByEmail(any(String.class))).thenReturn(true);
+        var email = TestUtils.createUser().getEmail();
+        assertThat(userRepository.existsByEmail(email)).isTrue();
     }
 }
