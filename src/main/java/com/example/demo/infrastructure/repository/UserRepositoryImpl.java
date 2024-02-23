@@ -6,14 +6,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    private final UserJpaRepository repository;
+    private final UserJdbcRepository repository;
 
     @Override
+    @Transactional
     public User createUser(User user) {
         return repository.save(user);
     }
