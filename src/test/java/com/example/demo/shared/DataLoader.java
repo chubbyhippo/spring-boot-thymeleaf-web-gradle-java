@@ -26,8 +26,8 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
         log.info("JDBC URL : {}", jdbcUrl);
-        IntStream.range(0, 10)
-                .mapToObj(i -> TestUtils.createUser())
+        IntStream.range(0, 1000)
+                .mapToObj(i -> TestUtils.createNullIdUser())
                 .forEach(userRepository::createUser);
 
     }
