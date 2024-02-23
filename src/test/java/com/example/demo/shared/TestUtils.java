@@ -29,6 +29,17 @@ public class TestUtils {
                 .build();
 
     }
+    public static User createNullIdUser() {
+        return User.builder()
+                .firstname(faker.elderScrolls().firstName())
+                .lastname(faker.elderScrolls().lastName())
+                .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .dob(faker.date().birthdayLocalDate(18, 98))
+                .email(faker.internet().emailAddress())
+                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
+                .build();
+
+    }
 
     public static CreateUserDto createCreateUserDto() {
         return CreateUserDto.builder()
