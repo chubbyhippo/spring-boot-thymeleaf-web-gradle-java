@@ -50,7 +50,6 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-//    maxParallelForks = Runtime.getRuntime().availableProcessors() - 1
 }
 
 sourceSets {
