@@ -25,7 +25,7 @@ repositories {
 }
 
 val datafakerVersion = "2.1.0"
-val alpinejsVersion = "3.13.3"
+val alpinejsVersion = "3.13.5"
 
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
