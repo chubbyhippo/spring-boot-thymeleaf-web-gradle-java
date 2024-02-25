@@ -9,7 +9,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
 @Testcontainers
-public abstract class TestcontainersConfig {
+public class TestcontainersConfig {
 
     @Container
     @ServiceConnection
