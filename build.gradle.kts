@@ -26,6 +26,7 @@ repositories {
 
 extra["datafakerVersion"] = "2.1.0"
 extra["alpinejsVersion"] = "3.13.5"
+extra["nodeVersion"] = "20.11.1"
 
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
@@ -62,7 +63,7 @@ sourceSets {
 
 node {
     download.set(true)
-    version.set("20.11.1")
+    version.set("${property("nodeVersion")}")
     npmInstallCommand.set("ci")
 }
 
