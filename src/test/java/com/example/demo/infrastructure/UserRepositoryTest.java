@@ -1,6 +1,6 @@
 package com.example.demo.infrastructure;
 
-import com.example.demo.AbstractContainersTest;
+import com.example.demo.TestcontainersConfig;
 import com.example.demo.domain.model.User;
 import com.example.demo.infrastructure.repository.UserJdbcRepository;
 import com.example.demo.infrastructure.repository.UserRepositoryImpl;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 @DataJdbcTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ImportTestcontainers(AbstractContainersTest.class)
+@ImportTestcontainers(TestcontainersConfig.class)
 class UserRepositoryTest {
 
     @Mock
