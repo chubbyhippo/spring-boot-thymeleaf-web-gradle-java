@@ -30,13 +30,10 @@ public record User(
         @Column("phone_number")
         String phoneNumber,
         @CreatedDate
-        @Column("create_date")
         Instant createdDate,
         @LastModifiedDate
-        @Column("last_modified_date")
         Instant lastModifiedDate,
         @Version
-        @Column("version")
         int version
 ) {
 }
