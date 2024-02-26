@@ -1,6 +1,6 @@
 package com.example.demo.presentation.controller;
 
-import com.example.demo.application.dto.CreateUserDto;
+import com.example.demo.application.dto.RequestUserDto;
 import com.example.demo.application.service.UserService;
 import com.example.demo.domain.model.Gender;
 import lombok.RequiredArgsConstructor;
@@ -35,13 +35,13 @@ public class UserController {
 
     @GetMapping("/create")
     public String createUserForm(Model model) {
-        model.addAttribute("user", CreateUserDto.builder().build());
+        model.addAttribute("user", RequestUserDto.builder().build());
         model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER, Gender.UNKNOWN));
         return "users/edit";
     }
 
     @PostMapping("/create")
-    public String doCreateUser(@Validated @ModelAttribute("user") CreateUserDto createUserDto,
+    public String doCreateUser(@Validated @ModelAttribute("user") RequestUserDto requestUserDto,
                                BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("genders", List.of(Gender.MALE,
@@ -51,7 +51,7 @@ public class UserController {
             return "users/edit";
         }
 
-        service.createUser(createUserDto);
+        service.createUser(requestUserDto);
 
         return "redirect:/users";
     }
