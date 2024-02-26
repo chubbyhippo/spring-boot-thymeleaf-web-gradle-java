@@ -12,7 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
 @Builder
-public record CreateUserDto(
+public record RequestUserDto(
         @NotBlank
         String firstname,
         @NotBlank
