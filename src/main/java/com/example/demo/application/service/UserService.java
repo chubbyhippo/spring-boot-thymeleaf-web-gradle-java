@@ -1,6 +1,6 @@
 package com.example.demo.application.service;
 
-import com.example.demo.application.dto.CreateUserDto;
+import com.example.demo.application.dto.RequestUserDto;
 import com.example.demo.application.dto.ResponseUserDto;
 import com.example.demo.application.mapper.UserMapper;
 import com.example.demo.domain.repository.UserRepository;
@@ -21,8 +21,8 @@ public class UserService {
                 .map(userMapper::toResponseUserDto);
     }
 
-    public void createUser(CreateUserDto createUserDto) {
-        repository.createUser(userMapper.toUser(createUserDto));
+    public void createUser(RequestUserDto requestUserDto) {
+        repository.createUser(userMapper.toUser(requestUserDto));
     }
 
 }
