@@ -171,9 +171,10 @@
                                 </label>
                                 <div class="mt-1 relative rounded-md shadow-sm">
                                     <input id="birthday"
-                                           type="text"
+                                           type="date"
                                            th:field="*{birthday}"
-                                           th:placeholder="#{user.birthday.placeholder}"
+                                           x-data="{ picker: {date:''}}"
+                                           x-model="picker.date"
                                            class="shadow-sm block w-full sm:text-sm border-gray-300 rounded-md"
                                            th:classappend="${#fields.hasErrors('birthday')?'border-red-300 focus:border-red-300 focus:ring-red-500':'focus:ring-green-500 focus:border-green-500'}">
                                     <div th:if="${#fields.hasErrors('birthday')}"
