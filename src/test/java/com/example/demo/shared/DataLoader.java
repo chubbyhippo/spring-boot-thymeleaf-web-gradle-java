@@ -22,13 +22,18 @@ public class DataLoader implements CommandLineRunner {
 
     @Value("${spring.datasource.url}")
     private String jdbcUrl;
+    @Value("${spring.datasource.username}")
+    private String username;
+    @Value("${spring.datasource.password}")
+    private String password;
 
     @Override
     public void run(String... args) {
-        log.info("JDBC URL : {}", jdbcUrl);
         IntStream.range(0, 1000)
                 .mapToObj(i -> TestUtils.createNullIdUser())
                 .forEach(userRepository::createUser);
-
+        log.info("JDBC URL: {}", jdbcUrl);
+        log.info("Database username: {}", username);
+        log.info("Database password: {}", password);
     }
 }
