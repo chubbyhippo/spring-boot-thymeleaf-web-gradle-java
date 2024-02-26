@@ -1,6 +1,6 @@
 package com.example.demo.presentation.controller;
 
-import com.example.demo.application.dto.CreateUserDto;
+import com.example.demo.application.dto.RequestUserDto;
 import com.example.demo.application.service.UserService;
 import com.example.demo.application.validation.UniqueEmailValidator;
 import com.example.demo.domain.repository.UserRepository;
@@ -65,7 +65,7 @@ class UserControllerTest {
     void shouldRedirectToUsersIfValid() throws Exception {
 
 
-        doNothing().when(userService).createUser(any(CreateUserDto.class));
+        doNothing().when(userService).createUser(any(RequestUserDto.class));
         when(userRepository.existsByEmail(any(String.class))).thenReturn(false);
         var createUserDto = TestUtils.createCreateUserDto();
 
@@ -81,9 +81,9 @@ class UserControllerTest {
     @DisplayName("should return to edit page if invalid")
     void shouldReturnToEditPageIfInvalid() throws Exception {
 
-        doNothing().when(userService).createUser(any(CreateUserDto.class));
+        doNothing().when(userService).createUser(any(RequestUserDto.class));
         when(userRepository.existsByEmail(any(String.class))).thenReturn(true);
-        var createUserDtoWithAllEmptyFields = CreateUserDto.builder().build();
+        var createUserDtoWithAllEmptyFields = RequestUserDto.builder().build();
 
         mockMvc.perform(post("/users/create")
                         .flashAttr("user", createUserDtoWithAllEmptyFields)
