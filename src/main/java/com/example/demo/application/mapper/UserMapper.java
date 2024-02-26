@@ -1,6 +1,6 @@
 package com.example.demo.application.mapper;
 
-import com.example.demo.application.dto.CreateUserDto;
+import com.example.demo.application.dto.RequestUserDto;
 import com.example.demo.application.dto.ResponseUserDto;
 import com.example.demo.domain.model.User;
 import org.springframework.stereotype.Component;
@@ -18,14 +18,14 @@ public class UserMapper {
                 .build();
     }
 
-    public User toUser(CreateUserDto createUserDto) {
+    public User toUser(RequestUserDto requestUserDto) {
         return User.builder()
-                .firstname(createUserDto.firstname())
-                .lastname(createUserDto.lastname())
-                .gender(createUserDto.gender())
-                .dob(createUserDto.birthday())
-                .email(createUserDto.email())
-                .phoneNumber(createUserDto.phoneNumber())
+                .firstname(requestUserDto.firstname())
+                .lastname(requestUserDto.lastname())
+                .gender(requestUserDto.gender())
+                .dob(requestUserDto.birthday())
+                .email(requestUserDto.email())
+                .phoneNumber(requestUserDto.phoneNumber())
                 .build();
     }
 }
