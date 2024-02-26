@@ -20,6 +20,7 @@ public class UserMapper {
 
     public User toUser(RequestUserDto requestUserDto) {
         return User.builder()
+                .id(requestUserDto.id())
                 .firstname(requestUserDto.firstname())
                 .lastname(requestUserDto.lastname())
                 .gender(requestUserDto.gender())
