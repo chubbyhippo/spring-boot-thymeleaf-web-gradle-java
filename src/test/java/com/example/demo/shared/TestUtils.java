@@ -1,6 +1,6 @@
 package com.example.demo.shared;
 
-import com.example.demo.application.dto.CreateUserDto;
+import com.example.demo.application.dto.RequestUserDto;
 import com.example.demo.application.dto.ResponseUserDto;
 import com.example.demo.application.mapper.UserMapper;
 import com.example.demo.domain.model.Gender;
@@ -41,8 +41,8 @@ public class TestUtils {
 
     }
 
-    public static CreateUserDto createCreateUserDto() {
-        return CreateUserDto.builder()
+    public static RequestUserDto createCreateUserDto() {
+        return RequestUserDto.builder()
                 .firstname(faker.elderScrolls().firstName())
                 .lastname(faker.elderScrolls().lastName())
                 .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
