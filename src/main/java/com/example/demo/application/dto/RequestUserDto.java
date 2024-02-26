@@ -10,9 +10,11 @@ import lombok.Builder;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Builder
 public record RequestUserDto(
+        UUID id,
         @NotBlank
         String firstname,
         @NotBlank
