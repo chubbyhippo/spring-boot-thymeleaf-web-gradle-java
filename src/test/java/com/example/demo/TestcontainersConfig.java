@@ -13,7 +13,7 @@ public class TestcontainersConfig {
 
     @Container
     @ServiceConnection
-    public static PostgreSQLContainer<?> postgresql = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
+    public static final PostgreSQLContainer<?> postgresql = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
 
     @DynamicPropertySource
     public static void registerPgProperties(DynamicPropertyRegistry registry) {
