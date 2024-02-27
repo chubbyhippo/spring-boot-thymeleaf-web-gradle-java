@@ -15,7 +15,7 @@
 </head>
 <body class="h-full">
 <div x-data="sidebarMenu()"
-     @keydown.window.escape="closeSidebar">
+     @keydown.window.escape="closeSidebar()">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div th:replace="~{fragments/sidebar-menu :: mobile}"></div>
 
