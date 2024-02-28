@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Builder
-@Table(name = "thymeleaf_user")
+@Table(name = "app_user")
 public record User(
         @Id
         UUID id,
