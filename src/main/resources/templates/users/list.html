@@ -3,7 +3,8 @@
         xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout/layout}"
-        th:with="activeMenuItem='users'">
+        th:with="activeMenuItem='users'"
+        lang="en">
 <head>
     <title>Users</title>
 </head>
@@ -32,7 +33,8 @@
                             <tbody>
                             <!-- tag::tr-body[] -->
                             <tr class="bg-white" th:each="user : ${users}">
-                                <td th:replace="~{fragments/table :: data(contents=${user.name},primary=true)}"></td> <!--.-->
+                                <td th:replace="~{fragments/table :: data(contents=${user.name},primary=true)}"></td>
+                                <!--.-->
                                 <td th:replace="~{fragments/table :: data(contents=${user.gender},hideOnMobile=true)}"></td>
                                 <td th:replace="~{fragments/table :: data(contents=${user.birthday},hideOnMobile=true)}"></td>
                                 <td th:replace="~{fragments/table :: data(contents=${user.email},hideOnMobile=true)}"></td>
