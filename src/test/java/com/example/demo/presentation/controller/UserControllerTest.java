@@ -31,7 +31,6 @@ class UserControllerTest {
     @MockBean
     private UserService userService;
     @SpyBean
-    @SuppressWarnings("unused")
     private UniqueEmailValidator uniqueEmailValidator;
     @MockBean
     private UserRepository userRepository;
