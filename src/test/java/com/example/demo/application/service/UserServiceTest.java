@@ -23,7 +23,6 @@ class UserServiceTest {
     @Mock
     private UserRepository userRepository;
 
-    @SuppressWarnings("unused")
     @Spy
     private UserMapper userMapper;
 
