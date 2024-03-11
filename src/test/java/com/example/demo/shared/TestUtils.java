@@ -14,6 +14,9 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 public class TestUtils {
+    private TestUtils() {
+        throw new IllegalStateException("Utility class");
+    }
 
     private static final Faker faker = new Faker();
 
