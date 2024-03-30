@@ -7,7 +7,7 @@ plugins {
     id("com.github.node-gradle.node") version "7.0.2"
 }
 
-group = "com.example"
+group = "io.github.chubbyhippo"
 version = "0.0.1-SNAPSHOT"
 
 java {
