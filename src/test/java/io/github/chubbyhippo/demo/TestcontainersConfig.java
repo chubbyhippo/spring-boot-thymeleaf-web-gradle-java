@@ -1,24 +1,18 @@
 package io.github.chubbyhippo.demo;
 
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.context.annotation.Bean;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
-@Testcontainers
+@TestConfiguration(proxyBeanMethods = false)
 public class TestcontainersConfig {
 
-    @Container
+    @Bean
     @ServiceConnection
-    public static final PostgreSQLContainer<?> postgresql = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
-
-    @DynamicPropertySource
-    public static void registerPgProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgresql::getJdbcUrl);
-        registry.add("spring.datasource.username", postgresql::getUsername);
-        registry.add("spring.datasource.password", postgresql::getPassword);
+    PostgreSQLContainer<?> getPostgresql() {
+        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
     }
+
 }
