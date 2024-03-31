@@ -2,12 +2,12 @@ package io.github.chubbyhippo.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.context.ImportTestcontainers;
+import org.springframework.context.annotation.Import;
 
 import static org.assertj.core.api.Assertions.assertThatNoException;
 
 @SpringBootTest
-@ImportTestcontainers(TestcontainersConfig.class)
+@Import(TestcontainersConfig.class)
 class DemoApplicationTests {
 
     @Test
