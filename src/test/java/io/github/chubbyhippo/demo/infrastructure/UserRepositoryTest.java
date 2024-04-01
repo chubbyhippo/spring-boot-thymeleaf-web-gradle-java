@@ -1,6 +1,6 @@
 package io.github.chubbyhippo.demo.infrastructure;
 
-import io.github.chubbyhippo.demo.TestcontainersConfig;
+import io.github.chubbyhippo.demo.ContainersConfig;
 import io.github.chubbyhippo.demo.domain.model.User;
 import io.github.chubbyhippo.demo.infrastructure.repository.UserJdbcRepository;
 import io.github.chubbyhippo.demo.infrastructure.repository.UserRepositoryImpl;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 @DataJdbcTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import(TestcontainersConfig.class)
+@Import(ContainersConfig.class)
 class UserRepositoryTest {
 
     @Mock
