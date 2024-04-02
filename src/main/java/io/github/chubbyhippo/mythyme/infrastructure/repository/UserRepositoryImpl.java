@@ -1,7 +1,7 @@
-package io.github.chubbyhippo.demo.infrastructure.repository;
+package io.github.chubbyhippo.mythyme.infrastructure.repository;
 
-import io.github.chubbyhippo.demo.domain.model.User;
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.domain.model.User;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
