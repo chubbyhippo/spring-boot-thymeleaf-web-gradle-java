@@ -1,8 +1,8 @@
-package io.github.chubbyhippo.demo.application.mapper;
+package io.github.chubbyhippo.mythyme.application.mapper;
 
-import io.github.chubbyhippo.demo.application.dto.RequestUserDto;
-import io.github.chubbyhippo.demo.application.dto.ResponseUserDto;
-import io.github.chubbyhippo.demo.domain.model.User;
+import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
+import io.github.chubbyhippo.mythyme.application.dto.ResponseUserDto;
+import io.github.chubbyhippo.mythyme.domain.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
