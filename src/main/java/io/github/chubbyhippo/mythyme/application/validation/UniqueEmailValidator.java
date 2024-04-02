@@ -1,6 +1,6 @@
-package io.github.chubbyhippo.demo.application.validation;
+package io.github.chubbyhippo.mythyme.application.validation;
 
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
