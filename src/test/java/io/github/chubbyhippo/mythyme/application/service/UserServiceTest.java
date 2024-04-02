@@ -1,9 +1,9 @@
-package io.github.chubbyhippo.demo.application.service;
+package io.github.chubbyhippo.mythyme.application.service;
 
-import io.github.chubbyhippo.demo.application.mapper.UserMapper;
-import io.github.chubbyhippo.demo.domain.model.User;
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
-import io.github.chubbyhippo.demo.shared.TestUtils;
+import io.github.chubbyhippo.mythyme.application.mapper.UserMapper;
+import io.github.chubbyhippo.mythyme.domain.model.User;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
