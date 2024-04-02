@@ -1,6 +1,6 @@
-package io.github.chubbyhippo.demo.application.mapper;
+package io.github.chubbyhippo.mythyme.application.mapper;
 
-import io.github.chubbyhippo.demo.shared.TestUtils;
+import io.github.chubbyhippo.mythyme.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
