@@ -1,4 +1,4 @@
-package io.github.chubbyhippo.demo;
+package io.github.chubbyhippo.mythyme;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
