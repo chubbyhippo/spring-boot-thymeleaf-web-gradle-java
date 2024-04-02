@@ -1,6 +1,6 @@
-package io.github.chubbyhippo.demo.shared;
+package io.github.chubbyhippo.mythyme.shared;
 
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
