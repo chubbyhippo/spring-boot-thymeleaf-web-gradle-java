@@ -1,10 +1,10 @@
-package io.github.chubbyhippo.demo.shared;
+package io.github.chubbyhippo.mythyme.shared;
 
-import io.github.chubbyhippo.demo.application.dto.RequestUserDto;
-import io.github.chubbyhippo.demo.application.dto.ResponseUserDto;
-import io.github.chubbyhippo.demo.application.mapper.UserMapper;
-import io.github.chubbyhippo.demo.domain.model.Gender;
-import io.github.chubbyhippo.demo.domain.model.User;
+import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
+import io.github.chubbyhippo.mythyme.application.dto.ResponseUserDto;
+import io.github.chubbyhippo.mythyme.application.mapper.UserMapper;
+import io.github.chubbyhippo.mythyme.domain.model.Gender;
+import io.github.chubbyhippo.mythyme.domain.model.User;
 import net.datafaker.Faker;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
