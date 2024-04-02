@@ -1,10 +1,10 @@
-package io.github.chubbyhippo.demo.infrastructure;
+package io.github.chubbyhippo.mythyme.infrastructure;
 
-import io.github.chubbyhippo.demo.ContainersConfig;
-import io.github.chubbyhippo.demo.domain.model.User;
-import io.github.chubbyhippo.demo.infrastructure.repository.UserJdbcRepository;
-import io.github.chubbyhippo.demo.infrastructure.repository.UserRepositoryImpl;
-import io.github.chubbyhippo.demo.shared.TestUtils;
+import io.github.chubbyhippo.mythyme.ContainersConfig;
+import io.github.chubbyhippo.mythyme.domain.model.User;
+import io.github.chubbyhippo.mythyme.infrastructure.repository.UserJdbcRepository;
+import io.github.chubbyhippo.mythyme.infrastructure.repository.UserRepositoryImpl;
+import io.github.chubbyhippo.mythyme.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
