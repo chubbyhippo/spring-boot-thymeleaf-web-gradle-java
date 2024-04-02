@@ -1,6 +1,6 @@
-package io.github.chubbyhippo.demo.domain.repository;
+package io.github.chubbyhippo.mythyme.domain.repository;
 
-import io.github.chubbyhippo.demo.domain.model.User;
+import io.github.chubbyhippo.mythyme.domain.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
