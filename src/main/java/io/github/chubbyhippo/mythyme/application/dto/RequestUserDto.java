@@ -1,7 +1,7 @@
-package io.github.chubbyhippo.demo.application.dto;
+package io.github.chubbyhippo.mythyme.application.dto;
 
-import io.github.chubbyhippo.demo.application.validation.UniqueEmail;
-import io.github.chubbyhippo.demo.domain.model.Gender;
+import io.github.chubbyhippo.mythyme.application.validation.UniqueEmail;
+import io.github.chubbyhippo.mythyme.domain.model.Gender;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
