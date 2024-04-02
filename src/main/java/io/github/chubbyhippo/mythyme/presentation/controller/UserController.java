@@ -1,8 +1,8 @@
-package io.github.chubbyhippo.demo.presentation.controller;
+package io.github.chubbyhippo.mythyme.presentation.controller;
 
-import io.github.chubbyhippo.demo.application.dto.RequestUserDto;
-import io.github.chubbyhippo.demo.application.service.UserService;
-import io.github.chubbyhippo.demo.domain.model.Gender;
+import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
+import io.github.chubbyhippo.mythyme.application.service.UserService;
+import io.github.chubbyhippo.mythyme.domain.model.Gender;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SortDefault;
