@@ -1,4 +1,4 @@
-package io.github.chubbyhippo.demo.application.validation;
+package io.github.chubbyhippo.mythyme.application.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
