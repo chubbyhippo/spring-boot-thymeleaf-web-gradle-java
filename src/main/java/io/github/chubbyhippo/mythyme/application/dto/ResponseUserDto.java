@@ -1,6 +1,6 @@
-package io.github.chubbyhippo.demo.application.dto;
+package io.github.chubbyhippo.mythyme.application.dto;
 
-import io.github.chubbyhippo.demo.domain.model.Gender;
+import io.github.chubbyhippo.mythyme.domain.model.Gender;
 import lombok.Builder;
 
 import java.time.LocalDate;
