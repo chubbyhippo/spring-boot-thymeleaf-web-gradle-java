@@ -1,9 +1,9 @@
-package io.github.chubbyhippo.demo.application.service;
+package io.github.chubbyhippo.mythyme.application.service;
 
-import io.github.chubbyhippo.demo.application.dto.RequestUserDto;
-import io.github.chubbyhippo.demo.application.dto.ResponseUserDto;
-import io.github.chubbyhippo.demo.application.mapper.UserMapper;
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
+import io.github.chubbyhippo.mythyme.application.dto.ResponseUserDto;
+import io.github.chubbyhippo.mythyme.application.mapper.UserMapper;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
