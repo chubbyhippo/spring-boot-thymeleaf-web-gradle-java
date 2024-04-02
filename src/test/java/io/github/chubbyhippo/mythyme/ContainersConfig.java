@@ -1,4 +1,4 @@
-package io.github.chubbyhippo.demo;
+package io.github.chubbyhippo.mythyme;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
