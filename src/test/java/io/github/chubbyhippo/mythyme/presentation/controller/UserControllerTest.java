@@ -1,11 +1,11 @@
-package io.github.chubbyhippo.demo.presentation.controller;
+package io.github.chubbyhippo.mythyme.presentation.controller;
 
-import io.github.chubbyhippo.demo.application.dto.RequestUserDto;
-import io.github.chubbyhippo.demo.application.service.UserService;
-import io.github.chubbyhippo.demo.application.validation.UniqueEmailValidator;
-import io.github.chubbyhippo.demo.domain.repository.UserRepository;
-import io.github.chubbyhippo.demo.infrastructure.config.ThymeleafConfig;
-import io.github.chubbyhippo.demo.shared.TestUtils;
+import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
+import io.github.chubbyhippo.mythyme.application.service.UserService;
+import io.github.chubbyhippo.mythyme.application.validation.UniqueEmailValidator;
+import io.github.chubbyhippo.mythyme.domain.repository.UserRepository;
+import io.github.chubbyhippo.mythyme.infrastructure.config.ThymeleafConfig;
+import io.github.chubbyhippo.mythyme.shared.TestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
