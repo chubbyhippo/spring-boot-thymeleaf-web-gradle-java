@@ -1,4 +1,4 @@
-package io.github.chubbyhippo.demo.domain.model;
+package io.github.chubbyhippo.mythyme.domain.model;
 
 import lombok.Builder;
 import org.springframework.data.annotation.CreatedDate;
