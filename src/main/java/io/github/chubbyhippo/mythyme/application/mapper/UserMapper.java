@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
 
     public ResponseUserDto toResponseUserDto(User user) {
-        return ResponseUserDto.builder()
-                .name(user.firstname() + " " + user.lastname())
-                .gender(user.gender())
-                .birthday(user.dob())
-                .phoneNumber(user.phoneNumber())
-                .email(user.email())
+        return ResponseUserDto.ResponseUserDtoBuilder.aResponseUserDto()
+                .withName(user.firstname() + " " + user.lastname())
+                .withGender(user.gender())
+                .withBirthday(user.dob())
+                .withPhoneNumber(user.phoneNumber())
+                .withEmail(user.email())
                 .build();
     }
 
