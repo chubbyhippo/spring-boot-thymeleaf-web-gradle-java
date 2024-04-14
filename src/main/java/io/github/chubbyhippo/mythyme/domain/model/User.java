@@ -43,9 +43,6 @@ public record User(
         private LocalDate dob;
         private String email;
         private String phoneNumber;
-        private Instant createdDate;
-        private Instant lastModifiedDate;
-        private int version;
 
         private UserBuilder() {
         }
@@ -89,23 +86,8 @@ public record User(
             return this;
         }
 
-        public UserBuilder withCreatedDate(Instant createdDate) {
-            this.createdDate = createdDate;
-            return this;
-        }
-
-        public UserBuilder withLastModifiedDate(Instant lastModifiedDate) {
-            this.lastModifiedDate = lastModifiedDate;
-            return this;
-        }
-
-        public UserBuilder withVersion(int version) {
-            this.version = version;
-            return this;
-        }
-
         public User build() {
-            return new User(id, firstname, lastname, gender, dob, email, phoneNumber, createdDate, lastModifiedDate, version);
+            return new User(id, firstname, lastname, gender, dob, email, phoneNumber, null, null, 0);
         }
     }
 }
