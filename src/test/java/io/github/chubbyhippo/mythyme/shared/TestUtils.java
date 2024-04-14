@@ -32,6 +32,7 @@ public class TestUtils {
                 .build();
 
     }
+
     public static User createNullIdUser() {
         return User.builder()
                 .firstname(faker.elderScrolls().firstName())
@@ -45,13 +46,13 @@ public class TestUtils {
     }
 
     public static RequestUserDto createCreateUserDto() {
-        return RequestUserDto.builder()
-                .firstname(faker.elderScrolls().firstName())
-                .lastname(faker.elderScrolls().lastName())
-                .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
-                .birthday(faker.date().birthdayLocalDate(18, 98))
-                .email(faker.internet().emailAddress())
-                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
+        return RequestUserDto.RequestUserDtoBuilder.aRequestUserDto()
+                .withFirstname(faker.elderScrolls().firstName())
+                .withLastname(faker.elderScrolls().lastName())
+                .withGender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .withBirthday(faker.date().birthdayLocalDate(18, 98))
+                .withEmail(faker.internet().emailAddress())
+                .withPhoneNumber(faker.phoneNumber().phoneNumberInternational())
                 .build();
 
     }
