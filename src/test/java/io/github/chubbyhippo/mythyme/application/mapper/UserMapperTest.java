@@ -32,7 +32,7 @@ class UserMapperTest {
     @Test
     @DisplayName("should return user from create user dto")
     void shouldReturnUserFromCreateUserDto() {
-        var createUserDto = TestUtils.createCreateUserDto();
+        var createUserDto = TestUtils.createRequestUserDto();
         var user = userMapper.toUser(createUserDto);
 
         assertThat(user.firstname()).isEqualTo(createUserDto.firstname());
