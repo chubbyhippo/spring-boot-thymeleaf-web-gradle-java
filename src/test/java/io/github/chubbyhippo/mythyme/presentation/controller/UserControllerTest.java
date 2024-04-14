@@ -82,7 +82,7 @@ class UserControllerTest {
 
         doNothing().when(userService).createUser(any(RequestUserDto.class));
         when(userRepository.existsByEmail(any(String.class))).thenReturn(true);
-        var createUserDtoWithAllEmptyFields = RequestUserDto.builder().build();
+        var createUserDtoWithAllEmptyFields = RequestUserDto.RequestUserDtoBuilder.aRequestUserDto().build();
 
         mockMvc.perform(post("/users/create")
                         .flashAttr("user", createUserDtoWithAllEmptyFields)
