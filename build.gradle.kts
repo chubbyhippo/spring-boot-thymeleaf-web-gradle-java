@@ -29,8 +29,6 @@ extra["alpinejsVersion"] = "3.13.5"
 extra["nodeVersion"] = "20.11.1"
 
 dependencies {
-    annotationProcessor("org.projectlombok:lombok")
-    compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     implementation("net.datafaker:datafaker:${property("datafakerVersion")}")
