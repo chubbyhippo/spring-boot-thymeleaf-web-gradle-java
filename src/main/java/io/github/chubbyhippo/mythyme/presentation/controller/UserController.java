@@ -3,7 +3,6 @@ package io.github.chubbyhippo.mythyme.presentation.controller;
 import io.github.chubbyhippo.mythyme.application.dto.RequestUserDto;
 import io.github.chubbyhippo.mythyme.application.service.UserService;
 import io.github.chubbyhippo.mythyme.domain.model.Gender;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SortDefault;
 import org.springframework.stereotype.Controller;
@@ -19,10 +18,13 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/users")
-@RequiredArgsConstructor
 public class UserController {
 
     private final UserService service;
+
+    public UserController(UserService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public String index(Model model,
