@@ -45,8 +45,9 @@ public class TestUtils {
 
     }
 
-    public static RequestUserDto createCreateUserDto() {
+    public static RequestUserDto createRequestUserDto() {
         return RequestUserDto.RequestUserDtoBuilder.aRequestUserDto()
+                .withId(UUID.randomUUID())
                 .withFirstname(faker.elderScrolls().firstName())
                 .withLastname(faker.elderScrolls().lastName())
                 .withGender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
