@@ -19,14 +19,14 @@ public class UserMapper {
     }
 
     public User toUser(RequestUserDto requestUserDto) {
-        return User.builder()
-                .id(requestUserDto.id())
-                .firstname(requestUserDto.firstname())
-                .lastname(requestUserDto.lastname())
-                .gender(requestUserDto.gender())
-                .dob(requestUserDto.birthday())
-                .email(requestUserDto.email())
-                .phoneNumber(requestUserDto.phoneNumber())
+        return User.UserBuilder.anUser()
+                .withId(requestUserDto.id())
+                .withFirstname(requestUserDto.firstname())
+                .withLastname(requestUserDto.lastname())
+                .withGender(requestUserDto.gender())
+                .withDob(requestUserDto.birthday())
+                .withEmail(requestUserDto.email())
+                .withPhoneNumber(requestUserDto.phoneNumber())
                 .build();
     }
 }
