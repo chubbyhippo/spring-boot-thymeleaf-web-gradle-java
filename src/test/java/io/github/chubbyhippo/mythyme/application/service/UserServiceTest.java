@@ -44,7 +44,7 @@ class UserServiceTest {
     @DisplayName("should create user")
     void shouldCreateUser() {
         when(userRepository.createUser(any(User.class))).thenReturn(TestUtils.createUser());
-        userService.createUser(TestUtils.createCreateUserDto());
+        userService.createUser(TestUtils.createRequestUserDto());
         verify(userRepository, times(1)).createUser(any(User.class));
     }
 }
