@@ -21,26 +21,26 @@ public class TestUtils {
     private static final Faker faker = new Faker();
 
     public static User createUser() {
-        return User.builder()
-                .id(UUID.randomUUID())
-                .firstname(faker.elderScrolls().firstName())
-                .lastname(faker.elderScrolls().lastName())
-                .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
-                .dob(faker.date().birthdayLocalDate(18, 98))
-                .email(faker.internet().emailAddress())
-                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
+        return User.UserBuilder.anUser()
+                .withId(UUID.randomUUID())
+                .withFirstname(faker.elderScrolls().firstName())
+                .withLastname(faker.elderScrolls().lastName())
+                .withGender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .withDob(faker.date().birthdayLocalDate(18, 98))
+                .withEmail(faker.internet().emailAddress())
+                .withPhoneNumber(faker.phoneNumber().phoneNumberInternational())
                 .build();
 
     }
 
     public static User createNullIdUser() {
-        return User.builder()
-                .firstname(faker.elderScrolls().firstName())
-                .lastname(faker.elderScrolls().lastName())
-                .gender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
-                .dob(faker.date().birthdayLocalDate(18, 98))
-                .email(faker.internet().emailAddress())
-                .phoneNumber(faker.phoneNumber().phoneNumberInternational())
+        return User.UserBuilder.anUser()
+                .withFirstname(faker.elderScrolls().firstName())
+                .withLastname(faker.elderScrolls().lastName())
+                .withGender(Gender.values()[ThreadLocalRandom.current().nextInt(Gender.values().length)])
+                .withDob(faker.date().birthdayLocalDate(18, 98))
+                .withEmail(faker.internet().emailAddress())
+                .withPhoneNumber(faker.phoneNumber().phoneNumberInternational())
                 .build();
 
     }
