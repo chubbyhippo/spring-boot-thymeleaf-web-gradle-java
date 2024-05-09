@@ -25,7 +25,7 @@ repositories {
 }
 
 extra["datafakerVersion"] = "2.2.2"
-extra["alpinejsVersion"] = "3.13.5"
+extra["alpinejsVersion"] = "3.13.10"
 extra["nodeVersion"] = "20.13.0"
 
 dependencies {
