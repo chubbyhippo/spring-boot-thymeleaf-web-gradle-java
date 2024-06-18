@@ -24,7 +24,7 @@ repositories {
     mavenCentral()
 }
 
-extra["datafakerVersion"] = "2.1.0"
+extra["datafakerVersion"] = "2.2.2"
 extra["alpinejsVersion"] = "3.13.5"
 extra["nodeVersion"] = "20.11.1"
 
