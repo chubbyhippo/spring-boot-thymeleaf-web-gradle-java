@@ -2,8 +2,8 @@ import com.github.gradle.node.npm.task.NpxTask
 
 plugins {
     java
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("org.springframework.boot") version "3.3.0"
+    id("io.spring.dependency-management") version "1.1.5"
     id("com.github.node-gradle.node") version "7.0.2"
 }
 
@@ -24,16 +24,19 @@ repositories {
     mavenCentral()
 }
 
-extra["datafakerVersion"] = "2.2.2"
-extra["alpinejsVersion"] = "3.13.10"
-extra["nodeVersion"] = "20.13.0"
+extra["datafakerVersion"] = "2.1.0"
+extra["alpinejsVersion"] = "3.13.5"
+extra["nodeVersion"] = "20.11.1"
 
 dependencies {
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     implementation("net.datafaker:datafaker:${property("datafakerVersion")}")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
     implementation("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-validation")
