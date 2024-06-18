@@ -1,6 +1,6 @@
 package io.github.chubbyhippo.mythyme.infrastructure;
 
-import io.github.chubbyhippo.mythyme.ContainersConfig;
+import io.github.chubbyhippo.mythyme.ContainersConfiguration;
 import io.github.chubbyhippo.mythyme.domain.model.User;
 import io.github.chubbyhippo.mythyme.infrastructure.repository.UserJdbcRepository;
 import io.github.chubbyhippo.mythyme.infrastructure.repository.UserRepositoryImpl;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 @DataJdbcTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import(ContainersConfig.class)
+@Import(ContainersConfiguration.class)
 class UserRepositoryTest {
 
     @Mock
