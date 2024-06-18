@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 
 @SpringBootTest
-@Import(ContainersConfig.class)
+@Import(ContainersConfiguration.class)
 class DemoApplicationTests {
 
     @Test
