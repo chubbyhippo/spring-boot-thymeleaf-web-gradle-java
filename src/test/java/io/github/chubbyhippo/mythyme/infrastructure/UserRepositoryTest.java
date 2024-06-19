@@ -58,6 +58,7 @@ class UserRepositoryTest {
     void shouldGetExistingStateOfEmail() {
         when(userJdbcRepository.existsByEmail(any(String.class))).thenReturn(true);
         var email = TestUtils.createUser().email();
+
         assertThat(userRepository.existsByEmail(email)).isTrue();
     }
 }
