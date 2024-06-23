@@ -2,7 +2,7 @@ import com.github.gradle.node.npm.task.NpxTask
 
 plugins {
     java
-    id("org.springframework.boot") version "3.3.0"
+    id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
     id("com.github.node-gradle.node") version "7.0.2"
 }
