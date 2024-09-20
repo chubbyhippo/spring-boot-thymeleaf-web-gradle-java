@@ -26,7 +26,7 @@ repositories {
 
 extra["datafakerVersion"] = "2.3.1"
 extra["alpinejsVersion"] = "3.14.1"
-extra["nodeVersion"] = "20.16.0"
+extra["nodeVersion"] = "20.17.0"
 
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
