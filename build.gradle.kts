@@ -2,9 +2,9 @@ import com.github.gradle.node.npm.task.NpxTask
 
 plugins {
     java
-    id("org.springframework.boot") version "3.3.4"
+    id("org.springframework.boot") version "3.4.0"
     id("io.spring.dependency-management") version "1.1.6"
-    id("com.github.node-gradle.node") version "7.0.2"
+    id("com.github.node-gradle.node") version "7.1.0"
 }
 
 group = "io.github.chubbyhippo"
@@ -26,7 +26,7 @@ repositories {
 
 extra["datafakerVersion"] = "2.3.1"
 extra["alpinejsVersion"] = "3.14.1"
-extra["nodeVersion"] = "20.17.0"
+extra["nodeVersion"] = "22.11.0"
 
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
