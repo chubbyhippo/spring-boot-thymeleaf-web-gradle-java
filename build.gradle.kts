@@ -65,7 +65,7 @@ sourceSets {
 node {
     download.set(true)
     version.set("${property("nodeVersion")}")
-    npmInstallCommand.set("ci")
+//    npmInstallCommand.set("ci")
 }
 
 tasks.register<NpxTask>("buildTailwind") {
